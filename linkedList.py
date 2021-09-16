@@ -1,4 +1,4 @@
-
+    
 
 class ListNode(object):
     def __init__(self, val=0, next=None):
@@ -40,6 +40,7 @@ class LinkedList:
         else:
             first = self.head
             second = first.next
+            self.tail  = self.head
             while(second):
                 temp = second.next
                 second.next = first
