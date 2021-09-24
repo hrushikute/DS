@@ -1,10 +1,17 @@
 def selectionSort (input):
     for i in range(0,len(input)):
-        for j in range(i,len(input)):
-            if input[i]> input[j] :
-                tmp = input[i]
-                input[i] = input[j]
-                input[j] = tmp
+        # Let first index be minimum
+        min = i
+        temp = input[i]
+
+        for j in range(i+1,len(input)):
+            if input[j] < input[min]:
+                # update the minimum if current value is lower than minimum
+                min = j
+
+
+        input[i] = input[min]
+        input[min] = temp
     return input
                 
 
