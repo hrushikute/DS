@@ -51,12 +51,17 @@ class BinarySearchTree:
                 print("Value is not present in tree")
                 return False
     
+
     def breadthFirstSearch(self):
+        # Good  -- For finding Shortest path
+        #       -- Searches for closer nodes to parent/root node
+        # Bad   -- Uses extra space.
         currentNode = self.root
         list_of_values = []
         queue_of_node = []
         queue_of_node.append(currentNode)
         while(len(queue_of_node)>0):
+            # ideally pop will remove last element from list hence use index ie 0
             currentNode = queue_of_node.pop(0)
             list_of_values.append(currentNode.value)
             if(currentNode.left != None):
